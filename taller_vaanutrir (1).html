@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taller VAANUTRIR — Independencia Alimentaria en 7 Días</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --principal:#00509D;
+    --secundario:#1C65AE;
+    --texto:#828487;
+    --enfasis:#003F88;
+    --el1:#28292A;
+    --el2:#E8EBED;
+    --el3:#F4F5F6;
+    --el4:#FFFFFF;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--el1);
+    background:var(--el4);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1, h2, h3, .serif{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  a.button{
+    display:inline-block;
+    text-decoration:none;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:16px;
+    padding:16px 34px;
+    border-radius:2px;
+    transition:background-color 0.2s ease, transform 0.15s ease;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--enfasis);
+    color:var(--el4);
+    overflow:hidden;
+    padding:96px 0 84px;
+  }
+  .hero-num{
+    position:absolute;
+    right:-40px;
+    top:-40px;
+    font-family:'Fraunces', serif;
+    font-size:520px;
+    font-weight:600;
+    color:rgba(255,255,255,0.06);
+    line-height:1;
+    pointer-events:none;
+    user-select:none;
+  }
+  .kicker{
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    letter-spacing:0.06em;
+    color:rgba(255,255,255,0.65);
+    margin-bottom:22px;
+    opacity:0;
+    animation:fadeUp 0.7s ease forwards;
+  }
+  .hero h1{
+    font-size:44px;
+    line-height:1.14;
+    max-width:9.5em;
+    margin-bottom:22px;
+    opacity:0;
+    animation:fadeUp 0.8s ease 0.1s forwards;
+  }
+  .hero p.sub{
+    font-size:17px;
+    color:rgba(255,255,255,0.82);
+    max-width:34em;
+    margin-bottom:34px;
+    opacity:0;
+    animation:fadeUp 0.8s ease 0.2s forwards;
+  }
+  .hero .meta{
+    font-size:14px;
+    color:rgba(255,255,255,0.65);
+    margin-top:22px;
+    opacity:0;
+    animation:fadeUp 0.8s ease 0.35s forwards;
+  }
+  .hero-cta{
+    opacity:0;
+    animation:fadeUp 0.8s ease 0.28s forwards;
+  }
+  .hero-cta a.button{
+    background:var(--el4);
+    color:var(--enfasis);
+  }
+  .hero-cta a.button:hover{
+    background:var(--el3);
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* ---------- PROBLEMA ---------- */
+  .problema{
+    padding:88px 0 84px;
+    background:var(--el4);
+  }
+  .problema h2{
+    font-size:28px;
+    line-height:1.3;
+    color:var(--el1);
+    max-width:11em;
+    margin-bottom:30px;
+  }
+  .problema ul{
+    list-style:none;
+    max-width:34em;
+  }
+  .problema li{
+    position:relative;
+    padding-left:22px;
+    margin-bottom:16px;
+    color:var(--texto);
+    font-size:16px;
+  }
+  .problema li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--principal);
+  }
+  .pull{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--enfasis);
+    max-width:16em;
+    margin-top:36px;
+    line-height:1.4;
+  }
+
+  /* ---------- METODO ---------- */
+  .metodo{
+    padding:88px 0;
+    background:var(--el3);
+  }
+  .metodo > .wrap > h2{
+    font-size:28px;
+    color:var(--el1);
+    margin-bottom:56px;
+  }
+  .paso{
+    position:relative;
+    padding-left:52px;
+    padding-bottom:48px;
+    border-left:1px solid var(--el2);
+    margin-left:14px;
+  }
+  .paso:last-child{
+    border-left:1px solid transparent;
+    padding-bottom:0;
+  }
+  .paso-dot{
+    position:absolute;
+    left:-15px;
+    top:2px;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--principal);
+    color:#fff;
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .paso h3{
+    font-size:21px;
+    color:var(--el1);
+    margin-bottom:10px;
+  }
+  .paso p{
+    color:var(--texto);
+    font-size:15.5px;
+    max-width:32em;
+  }
+
+  /* ---------- RESULTADO ---------- */
+  .resultado{
+    background:var(--enfasis);
+    color:var(--el4);
+    padding:72px 0;
+    text-align:left;
+  }
+  .resultado .eyebrow{
+    font-size:13px;
+    color:rgba(255,255,255,0.6);
+    margin-bottom:18px;
+  }
+  .resultado h2{
+    font-size:30px;
+    line-height:1.35;
+    max-width:14em;
+    font-weight:500;
+  }
+
+  /* ---------- DETALLES / CTA FINAL ---------- */
+  .detalles{
+    padding:96px 0 100px;
+    background:var(--el4);
+  }
+  .detalles h2{
+    font-size:28px;
+    color:var(--el1);
+    margin-bottom:36px;
+  }
+  .card{
+    border:1px solid var(--el2);
+    padding:40px;
+  }
+  .card-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:14px 0;
+    border-bottom:1px solid var(--el3);
+    font-size:15.5px;
+  }
+  .card-row:last-of-type{
+    border-bottom:none;
+  }
+  .card-row .label{
+    color:var(--texto);
+  }
+  .card-row .value{
+    color:var(--el1);
+    font-weight:500;
+    text-align:right;
+  }
+  .price-line{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    padding:22px 0;
+    border-top:1px solid var(--el2);
+    border-bottom:1px solid var(--el2);
+    margin:8px 0 28px;
+  }
+  .price-old{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    color:var(--texto);
+    text-decoration:line-through;
+    text-decoration-color:var(--texto);
+  }
+  .price-new{
+    font-family:'Fraunces', serif;
+    font-size:34px;
+    color:var(--enfasis);
+  }
+  .price-note{
+    font-size:13.5px;
+    color:var(--texto);
+    margin-left:auto;
+  }
+  .fine{
+    font-size:13px;
+    color:var(--texto);
+    text-align:center;
+    margin-top:16px;
+  }
+
+  /* ---------- PANEL DE PAGO (oculto tras clic) ---------- */
+  .pay-toggle summary{
+    list-style:none;
+    cursor:pointer;
+  }
+  .pay-toggle summary::-webkit-details-marker{
+    display:none;
+  }
+  .pay-summary{
+    background:var(--principal);
+    color:var(--el4);
+    width:100%;
+    text-align:center;
+    font-size:17px;
+    padding:18px 0;
+  }
+  .pay-toggle[open] .pay-summary{
+    background:var(--secundario);
+  }
+  .pay-summary:hover{
+    background:var(--secundario);
+  }
+  .pay-panel{
+    margin-top:22px;
+    padding-top:22px;
+    border-top:1px solid var(--el2);
+    animation:fadeUp 0.35s ease;
+  }
+  .rate-box{
+    background:var(--el3);
+    border:1px solid var(--el2);
+    padding:16px 18px;
+    font-size:14.5px;
+    color:var(--el1);
+    margin-bottom:22px;
+    line-height:1.5;
+  }
+  .rate-box strong{
+    color:var(--enfasis);
+  }
+  .pay-method{
+    padding:14px 0;
+    border-bottom:1px solid var(--el3);
+  }
+  .pay-method-label{
+    font-size:13px;
+    color:var(--texto);
+    margin-bottom:4px;
+  }
+  .pay-method-value{
+    font-family:'Fraunces', serif;
+    font-size:17px;
+    color:var(--el1);
+  }
+  .report-btn{
+    display:block;
+    background:var(--enfasis);
+    color:var(--el4);
+    width:100%;
+    text-align:center;
+    font-size:16px;
+    padding:16px 0;
+    margin-top:22px;
+  }
+  .report-btn:hover{
+    background:var(--secundario);
+  }
+
+  footer{
+    padding:40px 0 56px;
+    text-align:left;
+    color:var(--texto);
+    font-size:13.5px;
+    background:var(--el3);
+  }
+  footer .brand{
+    font-family:'Fraunces', serif;
+    color:var(--el1);
+    font-size:15px;
+    margin-bottom:4px;
+  }
+
+  @media (max-width:600px){
+    .hero{padding:72px 0 64px;}
+    .hero h1{font-size:32px;}
+    .hero-num{font-size:280px; right:-60px; top:-20px;}
+    .problema h2, .metodo > .wrap > h2, .detalles h2{font-size:24px;}
+    .card{padding:28px 22px;}
+    .card-row{flex-direction:column; align-items:flex-start; gap:4px;}
+    .card-row .value{text-align:left;}
+    .price-line{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-num">7</div>
+    <div class="wrap">
+      <div class="kicker">Método VAANUTRIR</div>
+      <h1>Alcanza tu independencia alimentaria en 7 días, sin dietas restrictivas.</h1>
+      <p class="sub">El sistema en 3 pasos para que un profesional ocupado deje de depender de dietas ajenas y aprenda a armar su propio plato — sin báscula, sin culpa, sin plan importado.</p>
+      <div class="hero-cta">
+        <a class="button" href="#pago">Quiero apartar mi cupo →</a>
+      </div>
+      <div class="meta">Sábado 26 de septiembre · 7:00 PM · Live + replay 72h</div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="problema">
+    <div class="wrap">
+      <h2>Sabes comer "sano" un mes… y a los tres vuelves a empezar.</h2>
+      <ul>
+        <li>Sigues el plan al pie de la letra, pero en cuanto falta el papel, no sabes qué hacer.</li>
+        <li>Cada comida "fuera de la dieta" se convierte en culpa, no en un dato.</li>
+        <li>Buscas estética y salud real, pero sigues dependiendo de que alguien más decida por ti.</li>
+      </ul>
+      <p class="pull">El problema no eres tú. Es que nunca te enseñaron a decidir.</p>
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section class="metodo">
+    <div class="wrap">
+      <h2>El método, en tres pasos</h2>
+
+      <div class="paso">
+        <div class="paso-dot">1</div>
+        <h3>Diagnóstico y Cero Restricciones</h3>
+        <p>Antes de armar un solo menú, identificamos por qué tus intentos anteriores fallaron — y sacamos la culpa de la ecuación.</p>
+      </div>
+
+      <div class="paso">
+        <div class="paso-dot">2</div>
+        <h3>Kit de Autorregulación</h3>
+        <p>Aprendes a estructurar comidas reales, ajustadas a tu rutina — sin básculas, sin apps, sin excel.</p>
+      </div>
+
+      <div class="paso">
+        <div class="paso-dot">3</div>
+        <h3>Independencia Alimentaria</h3>
+        <p>Diseñas tu propio esquema semanal — el que se adapta a tu semana real, no al revés — sin depender de un papel estricto de por vida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADO -->
+  <section class="resultado">
+    <div class="wrap">
+      <div class="eyebrow">Resultado esperado</div>
+      <h2 class="serif">Diseñas tu menú semanal completo en menos de 15 minutos. Sin báscula, sin culpa, sin plan importado.</h2>
+    </div>
+  </section>
+
+  <!-- DETALLES + CTA -->
+  <section class="detalles">
+    <div class="wrap">
+      <h2>Reserva tu cupo</h2>
+      <div class="card">
+        <div class="card-row"><span class="label">Fecha</span><span class="value">Sábado 26 de septiembre, 2026</span></div>
+        <div class="card-row"><span class="label">Hora</span><span class="value">7:00 PM</span></div>
+        <div class="card-row"><span class="label">Formato</span><span class="value">Live + replay 72h</span></div>
+        <div class="card-row"><span class="label">Pago</span><span class="value">Pago Móvil (Mercantil) o Zinli</span></div>
+
+        <div class="price-line">
+          <span id="price-old" class="price-old" style="display:none;">$10</span>
+          <span id="price-new" class="price-new">$9</span>
+          <span class="price-note">Tarifa anticipada hasta el 20/09</span>
+        </div>
+
+        <details id="pago" class="pay-toggle">
+          <summary class="button pay-summary">Quiero apartar mi cupo →</summary>
+
+          <div class="pay-panel">
+            <div class="rate-box">
+              <span id="rate-text">Consultando la tasa BCV de hoy…</span>
+            </div>
+
+            <div class="pay-method">
+              <div class="pay-method-label">Pago Móvil — Banco Mercantil</div>
+              <div class="pay-method-value">0414-6703988 · C.I. 27.315.668</div>
+            </div>
+            <div class="pay-method">
+              <div class="pay-method-label">Zinli</div>
+              <div class="pay-method-value">luisana.nava.hi@gmail.com</div>
+            </div>
+
+            <a class="button report-btn" href="https://wa.link/4exeil" target="_blank" rel="noopener">Ya pagué, enviar comprobante →</a>
+            <p class="fine">Envía tu comprobante por ese chat — ahí te confirmamos tu cupo y te compartimos el acceso al grupo del taller.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      document.querySelectorAll('a[href="#pago"]').forEach(function(link){
+        link.addEventListener('click', function(e){
+          e.preventDefault();
+          var details = document.getElementById('pago');
+          details.open = true;
+          details.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      });
+
+      /* =========================================================
+         TASA BCV — ACTUALIZA ESTOS 2 VALORES CADA VEZ QUE CAMBIE
+         (No necesitas tocar nada más del archivo)
+         ========================================================= */
+      var TASA_BCV_HOY = 842.21;        // <-- cambia este número por la tasa BCV del día
+      var TASA_BCV_FECHA = "12/09/2026"; // <-- cambia esta fecha por la del día de esa tasa
+      /* ========================================================= */
+
+      var cutoff = new Date('2026-09-20T23:59:59-04:00');
+      var now = new Date();
+      var price = now <= cutoff ? 9 : 10;
+
+      if (price === 10) {
+        document.getElementById('price-new').textContent = '$10';
+        var oldEl = document.getElementById('price-old');
+        oldEl.style.display = 'none';
+        document.querySelector('.price-note').textContent = 'Tarifa regular';
+      }
+
+      var monto = (TASA_BCV_HOY * price).toLocaleString('es-VE', {minimumFractionDigits:2, maximumFractionDigits:2});
+      var tasaFmt = TASA_BCV_HOY.toLocaleString('es-VE', {minimumFractionDigits:2, maximumFractionDigits:2});
+      document.getElementById('rate-text').innerHTML =
+        'Tasa BCV (' + TASA_BCV_FECHA + '): <strong>' + tasaFmt + ' Bs./$</strong> — Monto a pagar: <strong>' + monto + ' Bs.</strong> (equivalente a $' + price + ')';
+    })();
+  </script>
+
+  <footer>
+    <div class="wrap">
+      <div class="brand">VAANUTRIR</div>
+      <div>@luisananavaaa</div>
+    </div>
+  </footer>
+
+</body>
+</html>
