@@ -459,9 +459,9 @@
         <div class="card-row"><span class="label">Pago</span><span class="value">Pago Móvil (Mercantil) o Zinli</span></div>
 
         <div class="price-line">
-          <span id="price-old" class="price-old" style="display:none;">$10</span>
+          <span id="price-old" class="price-old" style="display:none;">$12</span>
           <span id="price-new" class="price-new">$9</span>
-          <span class="price-note">Tarifa anticipada hasta el 20/09</span>
+          <span class="price-note">Tarifa anticipada</span>
         </div>
 
         <details id="pago" class="pay-toggle">
@@ -504,18 +504,23 @@
          TASA BCV — ACTUALIZA ESTOS 2 VALORES CADA VEZ QUE CAMBIE
          (No necesitas tocar nada más del archivo)
          ========================================================= */
-      var TASA_BCV_HOY = 842.21;        // <-- cambia este número por la tasa BCV del día
-      var TASA_BCV_FECHA = "12/09/2026"; // <-- cambia esta fecha por la del día de esa tasa
+      var TASA_BCV_HOY = 842.2067;      // <-- cambia este número por la tasa BCV del día
+      var TASA_BCV_FECHA = "15/09/2026"; // <-- cambia esta fecha por la del día de esa tasa
       /* ========================================================= */
 
-      var cutoff = new Date('2026-09-20T23:59:59-04:00');
-      var now = new Date();
-      var price = now <= cutoff ? 9 : 10;
+      /* =========================================================
+         PRECIO DEL TALLER — cambia este valor cuando decidas
+         subir de la tarifa anticipada a la regular
+         ========================================================= */
+      var price = 9;   // <-- cambia a 12 cuando quieras cerrar la tarifa anticipada
+      /* ========================================================= */
 
-      if (price === 10) {
-        document.getElementById('price-new').textContent = '$10';
-        var oldEl = document.getElementById('price-old');
-        oldEl.style.display = 'none';
+      document.getElementById('price-new').textContent = '$' + price;
+      if (price === 9) {
+        document.getElementById('price-old').style.display = 'none';
+        document.querySelector('.price-note').textContent = 'Tarifa anticipada';
+      } else {
+        document.getElementById('price-old').style.display = 'none';
         document.querySelector('.price-note').textContent = 'Tarifa regular';
       }
 
