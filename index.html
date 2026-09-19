@@ -259,32 +259,6 @@
     font-weight:500;
     text-align:right;
   }
-  .price-line{
-    display:flex;
-    align-items:baseline;
-    gap:12px;
-    padding:22px 0;
-    border-top:1px solid var(--el2);
-    border-bottom:1px solid var(--el2);
-    margin:8px 0 28px;
-  }
-  .price-old{
-    font-family:'Fraunces', serif;
-    font-size:19px;
-    color:var(--texto);
-    text-decoration:line-through;
-    text-decoration-color:var(--texto);
-  }
-  .price-new{
-    font-family:'Fraunces', serif;
-    font-size:34px;
-    color:var(--enfasis);
-  }
-  .price-note{
-    font-size:13.5px;
-    color:var(--texto);
-    margin-left:auto;
-  }
   .fine{
     font-size:13px;
     color:var(--texto);
@@ -292,33 +266,18 @@
     margin-top:16px;
   }
 
-  /* ---------- PANEL DE PAGO (oculto tras clic) ---------- */
-  .pay-toggle summary{
-    list-style:none;
-    cursor:pointer;
-  }
-  .pay-toggle summary::-webkit-details-marker{
-    display:none;
-  }
-  .pay-summary{
+  .whatsapp-cta{
+    display:block;
     background:var(--principal);
     color:var(--el4);
     width:100%;
     text-align:center;
     font-size:17px;
     padding:18px 0;
+    margin-top:8px;
   }
-  .pay-toggle[open] .pay-summary{
+  .whatsapp-cta:hover{
     background:var(--secundario);
-  }
-  .pay-summary:hover{
-    background:var(--secundario);
-  }
-  .pay-panel{
-    margin-top:22px;
-    padding-top:22px;
-    border-top:1px solid var(--el2);
-    animation:fadeUp 0.35s ease;
   }
   .rate-box{
     background:var(--el3);
@@ -326,7 +285,7 @@
     padding:16px 18px;
     font-size:14.5px;
     color:var(--el1);
-    margin-bottom:22px;
+    margin:20px 0;
     line-height:1.5;
   }
   .rate-box strong{
@@ -345,19 +304,6 @@
     font-family:'Fraunces', serif;
     font-size:17px;
     color:var(--el1);
-  }
-  .report-btn{
-    display:block;
-    background:var(--enfasis);
-    color:var(--el4);
-    width:100%;
-    text-align:center;
-    font-size:16px;
-    padding:16px 0;
-    margin-top:22px;
-  }
-  .report-btn:hover{
-    background:var(--secundario);
   }
 
   footer{
@@ -382,7 +328,6 @@
     .card{padding:28px 22px;}
     .card-row{flex-direction:column; align-items:flex-start; gap:4px;}
     .card-row .value{text-align:left;}
-    .price-line{flex-wrap:wrap;}
   }
 </style>
 </head>
@@ -396,7 +341,7 @@
       <h1>Aprende a armar tu propio menú semanal en 7 días, sin dietas restrictivas.</h1>
       <p class="sub">El sistema en 3 pasos del Método VAANUTRIR para que un profesional ocupado deje de depender de dietas ajenas y arme su propio plato — sin báscula, sin culpa, sin plan importado.</p>
       <div class="hero-cta">
-        <a class="button" href="#pago">Quiero apartar mi cupo →</a>
+        <a class="button" href="https://wa.link/q7afy4" target="_blank" rel="noopener">Quiero mi cupo →</a>
       </div>
       <div class="meta">Sábado 26 de septiembre · 7:00 PM · Live + replay 72h</div>
     </div>
@@ -456,80 +401,26 @@
         <div class="card-row"><span class="label">Fecha</span><span class="value">Sábado 26 de septiembre, 2026</span></div>
         <div class="card-row"><span class="label">Hora</span><span class="value">7:00 PM</span></div>
         <div class="card-row"><span class="label">Formato</span><span class="value">Live + replay 72h</span></div>
-        <div class="card-row"><span class="label">Pago</span><span class="value">Pago Móvil (Mercantil) o Zinli</span></div>
+        <div class="card-row"><span class="label">Cupo</span><span class="value">Limitado</span></div>
 
-        <div class="price-line">
-          <span id="price-old" class="price-old" style="display:none;">$12</span>
-          <span id="price-new" class="price-new">$9</span>
-          <span class="price-note">Tarifa anticipada</span>
+        <div class="rate-box" id="rate-box">
+          Tasa BCV (18/09/2026): <strong>848,5458 Bs./$</strong> — Precio: <strong>$9</strong> = <strong>7.636,91 Bs.</strong>
         </div>
 
-        <details id="pago" class="pay-toggle">
-          <summary class="button pay-summary">Quiero apartar mi cupo →</summary>
+        <div class="pay-method">
+          <div class="pay-method-label">Pago Móvil — Banco Mercantil</div>
+          <div class="pay-method-value">0414-6703988 · C.I. 27.315.668</div>
+        </div>
+        <div class="pay-method">
+          <div class="pay-method-label">Zinli</div>
+          <div class="pay-method-value">luisana.nava.hi@gmail.com</div>
+        </div>
 
-          <div class="pay-panel">
-            <div class="rate-box">
-              <span id="rate-text">Consultando la tasa BCV de hoy…</span>
-            </div>
-
-            <div class="pay-method">
-              <div class="pay-method-label">Pago Móvil — Banco Mercantil</div>
-              <div class="pay-method-value">0414-6703988 · C.I. 27.315.668</div>
-            </div>
-            <div class="pay-method">
-              <div class="pay-method-label">Zinli</div>
-              <div class="pay-method-value">luisana.nava.hi@gmail.com</div>
-            </div>
-
-            <a class="button report-btn" href="https://wa.link/uhjvm6" target="_blank" rel="noopener">Ya pagué, enviar comprobante →</a>
-            <p class="fine">Envía tu comprobante por ese chat — ahí te confirmamos tu cupo y te compartimos el acceso al grupo del taller.</p>
-          </div>
-        </details>
+        <a class="button whatsapp-cta" href="https://wa.link/q7afy4" target="_blank" rel="noopener">Ya pagué, enviar comprobante →</a>
+        <p class="fine">Envía tu comprobante por ese chat y te confirmamos tu cupo.</p>
       </div>
     </div>
   </section>
-
-  <script>
-    (function(){
-      document.querySelectorAll('a[href="#pago"]').forEach(function(link){
-        link.addEventListener('click', function(e){
-          e.preventDefault();
-          var details = document.getElementById('pago');
-          details.open = true;
-          details.scrollIntoView({behavior:'smooth', block:'start'});
-        });
-      });
-
-      /* =========================================================
-         TASA BCV — ACTUALIZA ESTOS 2 VALORES CADA VEZ QUE CAMBIE
-         (No necesitas tocar nada más del archivo)
-         ========================================================= */
-      var TASA_BCV_HOY = 847.44;        // <-- cambia este número por la tasa BCV del día
-      var TASA_BCV_FECHA = "17/09/2026"; // <-- cambia esta fecha por la del día de esa tasa
-      /* ========================================================= */
-
-      /* =========================================================
-         PRECIO DEL TALLER — cambia este valor cuando decidas
-         subir de la tarifa anticipada a la regular
-         ========================================================= */
-      var price = 9;   // <-- cambia a 12 cuando quieras cerrar la tarifa anticipada
-      /* ========================================================= */
-
-      document.getElementById('price-new').textContent = '$' + price;
-      if (price === 9) {
-        document.getElementById('price-old').style.display = 'none';
-        document.querySelector('.price-note').textContent = 'Tarifa anticipada';
-      } else {
-        document.getElementById('price-old').style.display = 'none';
-        document.querySelector('.price-note').textContent = 'Tarifa regular';
-      }
-
-      var monto = (TASA_BCV_HOY * price).toLocaleString('es-VE', {minimumFractionDigits:2, maximumFractionDigits:2});
-      var tasaFmt = TASA_BCV_HOY.toLocaleString('es-VE', {minimumFractionDigits:2, maximumFractionDigits:2});
-      document.getElementById('rate-text').innerHTML =
-        'Tasa BCV (' + TASA_BCV_FECHA + '): <strong>' + tasaFmt + ' Bs./$</strong> — Monto a pagar: <strong>' + monto + ' Bs.</strong> (equivalente a $' + price + ')';
-    })();
-  </script>
 
   <footer>
     <div class="wrap">
