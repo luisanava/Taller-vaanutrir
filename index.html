@@ -110,6 +110,9 @@
   .hero-cta{
     opacity:0;
     animation:fadeUp 0.8s ease 0.28s forwards;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
   }
   .hero-cta a.button{
     background:var(--el4);
@@ -117,6 +120,30 @@
   }
   .hero-cta a.button:hover{
     background:var(--el3);
+  }
+  .hero-price{
+    font-family:'Fraunces', serif;
+    font-size:30px;
+    color:var(--el4);
+    margin-bottom:18px;
+    opacity:0;
+    animation:fadeUp 0.8s ease 0.05s forwards;
+  }
+  .hero-price span{
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    color:rgba(255,255,255,0.65);
+    margin-left:8px;
+    font-weight:500;
+  }
+  .button-outline{
+    background:transparent !important;
+    color:var(--el4) !important;
+    border:1px solid rgba(255,255,255,0.5);
+  }
+  .button-outline:hover{
+    background:rgba(255,255,255,0.1) !important;
+    border-color:var(--el4);
   }
 
   @keyframes fadeUp{
@@ -228,6 +255,55 @@
     line-height:1.35;
     max-width:14em;
     font-weight:500;
+  }
+
+  /* ---------- SOBRE MÍ ---------- */
+  .autoridad{
+    padding:88px 0;
+    background:var(--el4);
+  }
+  .autoridad-grid{
+    display:flex;
+    gap:44px;
+    align-items:flex-start;
+  }
+  .autoridad-foto{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:60% 15%;
+    flex-shrink:0;
+    border:1px solid var(--el2);
+  }
+  .autoridad h2{
+    font-size:26px;
+    color:var(--el1);
+    margin-bottom:4px;
+  }
+  .autoridad-sub{
+    font-size:14px;
+    color:var(--principal);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .autoridad p{
+    color:var(--texto);
+    font-size:15.5px;
+    max-width:36em;
+    margin-bottom:14px;
+  }
+  .autoridad-link{
+    color:var(--principal);
+    font-size:14.5px;
+    font-weight:600;
+    text-decoration:none;
+  }
+  .autoridad-link:hover{
+    color:var(--secundario);
+  }
+  @media (max-width:600px){
+    .autoridad-grid{flex-direction:column; align-items:flex-start; gap:22px;}
   }
 
   /* ---------- DETALLES / CTA FINAL ---------- */
@@ -342,10 +418,12 @@
     <div class="hero-num">7</div>
     <div class="wrap">
       <div class="kicker">Taller VAANUTRIR</div>
+      <div class="hero-price">$9 <span>tarifa anticipada</span></div>
       <h1>Aprende a armar tu propio menú semanal en 7 días, sin dietas restrictivas.</h1>
       <p class="sub">El sistema en 3 pasos del Método VAANUTRIR para que un profesional ocupado deje de depender de dietas ajenas y arme su propio plato — sin báscula, sin culpa, sin plan importado.</p>
       <div class="hero-cta">
         <a class="button" href="#reserva">Cómo reservar →</a>
+        <a class="button button-outline" href="https://wa.link/dhvsl5" target="_blank" rel="noopener">Tengo una pregunta</a>
       </div>
       <div class="meta">Sábado 26 de septiembre · 7:00 PM · Live + replay 72h</div>
     </div>
@@ -394,6 +472,21 @@
     <div class="wrap">
       <div class="eyebrow">Resultado esperado</div>
       <h2 class="serif">Diseñas tu menú semanal completo en menos de 15 minutos. Sin báscula, sin culpa, sin plan importado.</h2>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section class="autoridad">
+    <div class="wrap autoridad-grid">
+      <img class="autoridad-foto" src="luisana-nava.jpg" alt="Luisana Nava">
+      <div>
+        <div class="eyebrow">Sobre mí</div>
+        <h2>Luisana Nava</h2>
+        <p class="autoridad-sub">Licenciada en Nutrición y Dietética</p>
+        <p>Te ayudo a construir una relación saludable y sostenible con la alimentación, sin culpas ni restricciones. Creo que la nutrición no debe ser una carga ni una fórmula genérica — por eso brindo herramientas reales de autorregulación y educación nutricional.</p>
+        <p>Certificada en Nutrición Estética y Composición Corporal, combino la evaluación clínica con herramientas de salud digital para acompañarte de forma precisa y personalizada.</p>
+        <a class="autoridad-link" href="https://luisananava.com/sobre-mi-2/" target="_blank" rel="noopener">Conoce más sobre mí →</a>
+      </div>
     </div>
   </section>
 
